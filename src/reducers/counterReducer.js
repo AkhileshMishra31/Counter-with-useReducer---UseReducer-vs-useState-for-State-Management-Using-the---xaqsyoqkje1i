@@ -1,15 +1,14 @@
-const counterReducer = (taskState, action) => {
-    switch (action.type) {
-      case 'increment':
-        return { count: taskState.count + 1 }
-      case 'decrement':
-        return { count: taskState.count > 0 ? taskState.count - 1 : 0 }
-  
-      case 'reset':
-        return { count: 0 }
-      default:
-       throw new Error()
-    }
+import React from 'react';
+
+const counterReducer = (state,action) =>{
+  console.log(state, action);
+  if(action.type === "INCREMENT"){
+    return state+1;
   }
-  
-  export { counterReducer }
+  if(action.type === "DECREMENT"){
+    return state-1;
+  }
+  return state;
+}
+
+export {counterReducer}
